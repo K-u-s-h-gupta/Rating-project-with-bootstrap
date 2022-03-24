@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Feedback</title>
+
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background: linear-gradient(to right, #29323c, #485563) ;
+            box-sizing: border-box;
+        }
+        .buttons:focus{
+            box-shadow:none;
+            background-color: #485563;
+        }
+        .buttons:hover{
+            background-color: #485563;
+            color: #29323c;
+        }
+        .buttons{
+            background-color:#F76E11;
+            color: white;
+        }
+        input{
+            border:none; border-radius:50%; height: 35px; width: 35px; background-color:#6FB2D2; color: white;
+            transition: 0.2s;
+        }
+        input:focus{
+            background-color:#F76E11;
+        }
+        input:hover{
+            background-color:#F76E11;
+        }
+        img{
+            width: 50%;
+            display: flex;
+            margin: 0 auto;
+        }
+        .display{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5 py-3 px-4 rounded text-white" id="first-div" style="width: 35vw; background-color: #29323c; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ">
+
+        <i class="fa-solid fa-star text-danger p-2 mb-2" style="border-radius:20px; background-color:#6FB2D2;"></i>
+
+        <h3 class="mb-1" style="font-weight: bolder;">How did we do?</h3>
+        <p style="font-weight: lighter; font-size: 0.9rem; color: #95acb8;">Please let us know how we did with your support request. All feedback is appreciated to help us imporve our
+            offering!</p>
+
+        <div class="d-flex justify-content-between" id="input-field">
+            <input type="submit" value="1" id="input-first" >
+            <input type="submit" value="2" id="input-second">
+            <input type="submit" value="3" id="input-third">
+            <input type="submit" value="4" id="input-fourth">
+            <input type="submit" value="5" id="input-fifth">
+        </div>
+        <button class="btn w-100 mt-4 buttons" id="submit-btn" style="border-radius: 25px;">Submit</button>
+    </div>
+
+    <div class="container my-5 py-3 px-4 rounded text-white display " id="second-div" style="width: 35vw; background-color: #29323c; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; ">
+
+      <img src="png.png" alt="">
+
+      <div class="bg-secondary" style="border-radius: 20px; color:white;">
+          <p class="text-center mt-2 p-1" style="font-size: 0.6rem;"  id="text-area">You selected 4 out of 5</p>
+      </div>
+      <h3 class="text-center" style="font-weight: bolder;">Thank you!</h3>
+      <div class="text-center ">
+          <p style="font-size: 0.6rem; margin: 0; font-weight: lighter; color: #95acb8;">We appreciate you taking the time to give a rating.</p>
+          <p style="font-size: 0.6rem; font-weight: lighter; color: #95acb8;" class="mx-4">If you need more support, don't hesitate to get in touch</p>
+
+      </div>
+    </div>
+
+    <footer>
+        <p class="text-center" style="color: #29323c;">&copy; 2022 Kushagra Gupta</p>
+    </footer>
+
+
+
+
+
+    <script>
+
+        var submit=document.getElementById("submit-btn");
+
+        function submitEvent(){
+
+            let first_div = document.getElementById("first-div")
+            first_div.classList.add("display")
+            let second_div = document.getElementById("second-div")
+            second_div.classList.remove("display")
+
+        }
+        var first_field = document.getElementById("input-first")
+        var second_field = document.getElementById("input-second")
+        var third_field = document.getElementById("input-third")
+        var fourth_field = document.getElementById("input-fourth")
+        var fifth_field = document.getElementById("input-fifth")
+        
+        first_field.addEventListener('click' , ()=>{
+            let text_area = document.getElementById("text-area").innerHTML = `You selected ${first_field.value} out of 5`
+            submit.addEventListener("click" , submitEvent)
+            })
+            second_field.addEventListener('click' , ()=>{
+                let text_area = document.getElementById("text-area").innerHTML = `You selected ${second_field.value} out of 5`
+                submit.addEventListener("click" , submitEvent)
+            })
+            third_field.addEventListener('click' , ()=>{
+                let text_area = document.getElementById("text-area").innerHTML = `You selected ${third_field.value} out of 5`
+                submit.addEventListener("click" , submitEvent)
+            })
+           fourth_field.addEventListener('click' , ()=>{
+                let text_area = document.getElementById("text-area").innerHTML = `You selected ${fourth_field.value} out of 5`
+                submit.addEventListener("click" , submitEvent)
+            })
+            fifth_field.addEventListener('click' , ()=>{
+                let text_area = document.getElementById("text-area").innerHTML = `You selected ${fifth_field.value} out of 5`
+                submit.addEventListener("click" , submitEvent)
+            })
+
+
+    </script>
+
+</body>
+
+</html>
